@@ -2378,6 +2378,11 @@ class ActionComm extends CommonObject
 
 							$timestampStart = dol_stringtotime($obj->date_start." 12:00:00", 0);
 							$timestampEnd   = dol_stringtotime($obj->date_end." 23:59:59", 0);
+						} elseif ($obj->halfday == 2) {
+							$event['fulldayevent'] = false;
+													   
+							$timestampStart = dol_stringtotime($obj->date_start." 12:00:00", 0);
+							$timestampEnd   = dol_stringtotime($obj->date_end." 12:00:00", 0);	
 						} else {
 							$event['fulldayevent'] = true;
 
